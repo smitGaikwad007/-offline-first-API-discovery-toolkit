@@ -1,5 +1,5 @@
 {
-  "name": "api-directory-toolkit-local",
+  "name": "api-hub-toolkit",
   "version": "0.1.0",
   "description": "Offline-first API discovery toolkit with a searchable, evidence-tracked catalog",
   "author": "Smit Gaikwad <79749328+smitGaikwad007@users.noreply.github.com>",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smitGaikwad007/APIHub.git"
+    "url": "git+https://github.com/smitGaikwad007/-offline-first-API-discovery-toolkit.git"
   },
   "main": "src/index.js",
   "exports": "./src/index.js",

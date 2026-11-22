@@ -1,8 +1,8 @@
-# Project Plan (Project Name Pending)
+# APIHub Project Plan
 
 **Status:** Architecture proposal and implementation baseline  
 **Research checked:** 22 November 2026  
-**Decision state:** Technical direction and local implementation are owner-authorized. Project name remains pending approval; use only the private temporary package name locally. Publishing remains prohibited without explicit permission.
+**Decision state:** The project name is APIHub and the intended npm package name is `api-hub-toolkit`. The package remains private while catalog redistribution rights are unresolved. Publishing remains prohibited without explicit permission.
 
 ## Confirmed project direction
 
@@ -11,7 +11,7 @@ The following decisions were supplied by the project owner:
 - JavaScript, CommonJS initially, Node.js 22 or newer, and Vitest.
 - MIT code license, subject to final review.
 - Structured JSON data; offline-first search with a bundled catalog snapshot for v1.
-- The npm package provides API search, filtering, comparison, and API details. The v1 target is 300+ APIs, with data quality ahead of count.
+- The npm package provides API search, filtering, comparison, and API details. The initial `0.1.0` release keeps the five curated catalog records; the earlier 300+ target is no longer a release requirement.
 - Design for catalog data to be updated independently of the core library in a future release.
 - Include actual source URLs, field-level evidence and verification dates, explicit unknowns, and third-party license/attribution handling.
 - CLI is Phase 2. Website and playground are future phases.
@@ -29,7 +29,7 @@ Names and exact npm package spellings were checked on 22 November 2026. npm regi
 | **Endpointly** | `endpointly` returned 200 (registered). [npm registry record](https://registry.npmjs.org/endpointly) | GitHub repository search did not surface a clearly matching public repository in the first results checked; this is not proof of no conflict. Search: [Endpointly repositories](https://github.com/search?q=Endpointly&type=repositories). An existing [Endpointly API Watch app](https://apps.apple.com/pt/app/endpointly-api-watch/id6779238348) is adjacent API tooling. | `.com` returned an RDAP record; `.dev` returned 404. [`.com`](https://rdap.org/domain/endpointly.com), [`.dev`](https://rdap.org/domain/endpointly.dev) | **Least direct directory collision among the five, but still not clear:** npm and `.com` are taken, and the existing API-watch product is adjacent. A different package spelling/domain or a new name would need review. |
 | **ApiVerse** | `apiverse` returned 200; `api-verse` returned 404. [npm registry record](https://registry.npmjs.org/apiverse), [lookup](https://registry.npmjs.org/api-verse) | Multiple API collection/discovery repositories, including [dishamodi0910/APIVerse](https://github.com/dishamodi0910/APIVerse) and [Yadubir/APIverse](https://github.com/Yadubir/APIverse); API-Verse products also appear in search. | Both returned RDAP records. [`.com`](https://rdap.org/domain/apiverse.com), [`.dev`](https://rdap.org/domain/apiverse.dev) | **Avoid:** existing npm package and direct API-discovery/collection usage. |
 
-**Recommendation:** none of the five candidates is clear enough to finalize without brand confusion. Endpointly has the least direct directory overlap, but has a registered npm name and an adjacent API-watch product. The project name and package name therefore remain an owner decision; legal/trademark review and registrar confirmation are also outstanding. Do not claim any candidate is available based solely on these checks. Registry evidence can be refreshed immediately before deciding, since package names and domain registrations can change.
+**Decision:** APIHub is the project name and `api-hub-toolkit` is the intended npm package name. A registry lookup on 22 November 2026 returned no public package for the exact name; punctuation variants and the npm search similarity screen found no close registered match. This is a point-in-time screening, not a reservation or guarantee that npm's registration checks will accept the name. The earlier candidate recommendation above is retained as historical research; trademark and domain clearance remain separate.
 
 ## Evidence and assumptions
 
@@ -208,20 +208,20 @@ The initial implementation uses one small private npm package, with logic under 
 
 ## 7. Development roadmap
 
-### Planning gate (current)
+### Planning gate (completed)
 
 - Complete competitor research, architecture, schema, naming checks, and MVP criteria.
-- Resolve decisions that block implementation, especially brand/package name and data-use policy.
-- Begin implementation only after the owner approves the plan and the proposed name.
+- Project identity is set to APIHub / `api-hub-toolkit`; implementation is complete.
+- Catalog redistribution review remains a release gate; do not publish while any bundled record remains `not_assessed`.
 
 ### Product Phase 1 — npm library v1
 
-- Confirm the final name, MIT license review, public API signatures, error behavior, and catalog data-use policy.
+- Project identity and six public API signatures are finalized; complete code-license and catalog data-use review before release.
 - Build canonical JSON records, schema validation, duplicate detection, and reproducible snapshot generation.
 - Discover candidates from established directories, official provider catalogs, official API docs, and public machine-readable specs; treat third-party directories as leads, not authoritative evidence.
 - Verify each included record against provider documentation where possible; attach actual URLs and dates per field, mark unknowns explicitly, and distinguish documented facts from observed probes.
 - Track duplicates/aliases and each source's license/terms. Exclude upstream records whose redistribution terms are unclear until reviewed; link to source material where redistribution is not permitted.
-- Curate toward 300+ qualifying entries across 18+ categories. Do not lower the evidence bar to meet the count; report the verified count transparently if quality review finds fewer than 300.
+- Keep the initial catalog small and evidence-backed; catalog growth is not a release requirement.
 - Implement local `search`, `categories`, `getByCategory`, `getDetails`, `filter`, and `compare` over the bundled versioned JSON snapshot.
 - Keep snapshot loading replaceable so a later catalog artifact can be selected independently of core-library upgrades. Document catalog version/date and source attribution.
 - Document setup and examples. Use Vitest for important library behavior and schema/data integrity.
@@ -244,14 +244,14 @@ The initial implementation uses one small private npm package, with logic under 
 - Add automated safe checks (schema, duplicate IDs, source URL syntax, snapshot reproducibility); any network checks must be non-authoritative and reviewed.
 - Gather developer feedback and prioritize from usage evidence.
 
-**Current implementation baseline:** the private local package contains five sourced seed records across 19 categories. It is intentionally below the 300+ MVP target. All five currently mark availability and CORS as unknown where no live service/origin-specific evidence was collected. Source reuse terms are marked `not_assessed`, so public release requires licensing/attribution review.
+**Current implementation baseline:** private package `api-hub-toolkit@0.1.0` contains five sourced records across 19 categories, as accepted for the initial release. Availability and CORS remain unknown where no live service/origin-specific evidence was collected. Source reuse terms are `not_assessed`, so public release is blocked pending licensing/attribution review.
 
-## 8. MVP / version 1.0 scope
+## 8. MVP / initial release scope
 
 ### Include
 
-- CommonJS JavaScript npm library supporting Node.js 22+; package name is pending brand selection. CLI is excluded from v1 and planned for Phase 2.
-- At least **300 unique active public APIs** across at least **15 categories**; target 18 categories.
+- CommonJS JavaScript npm library named `api-hub-toolkit`, supporting Node.js 22+. CLI is excluded from v1 and planned for Phase 2.
+- The initial `0.1.0` catalog contains the five retained, evidence-backed API records across 19 categories; expanding the catalog is not a release requirement.
 - Local keyword search, category browsing, advanced metadata filters, stable results, and side-by-side comparison.
 - Required fields and explicit unknowns for the requested schema; provenance and last-verified dates, with field-level evidence for volatile claims.
 - Official documentation links; optional official specs and usage examples when available.
@@ -265,9 +265,9 @@ CLI search, comparison, and JSON output are Product Phase 2 scope, after the npm
 - Website, hosted search API, database server, accounts, ratings/reviews, provider dashboard, live uptime promises, automated scraping, API proxying, credential storage, and interactive playground.
 - Claims of exhaustiveness, provider endorsement, guaranteed reliability, or uniform licensing.
 
-### Quality bar for the 300-entry goal
+### Catalog quality bar
 
-Count an entry only when it is unique after canonicalization, has a working official website or documentation link checked at review time, a non-invented description, a primary category, a source URL, and a `lastVerifiedAt` date. For auth/pricing/HTTPS/CORS/rate limits, include a verified value or explicit unknown; do not disqualify a record simply because some facts are unknown. Exclude dead, duplicate, event-only, or unverifiable entries from the qualifying count. Keep known APIs with uncertain status separately labelled for review rather than quietly counting them as active.
+Each entry should be unique after canonicalization, link to an official site or docs checked at review time, have an independently written description, a primary category, source URLs, and a `lastVerifiedAt` date. For auth, pricing, HTTPS, CORS, and rate limits, include verified evidence or an explicit unknown. Keep entries with uncertain status clearly labelled; do not guess.
 
 ### Delivery risks and controls
 
@@ -275,7 +275,7 @@ Count an entry only when it is unique after canonicalization, has a working offi
 - **Data rights:** keep actual source URLs, attribution, and source/license metadata; assess each upstream dataset and API spec license before redistribution. A public URL does not itself grant redistribution rights.
 - **Scope creep:** ship local data and library/CLI behavior before website/playground infrastructure.
 - **Misleading comparisons:** preserve unknowns, distinguish provider documentation from probes, and avoid a composite “best API” score in v1.
-- **Maintenance load:** a 300-entry catalog needs an owner and ongoing review process. Entry count is a launch threshold, not a one-time substitute for maintenance.
+- **Maintenance load:** every catalog size needs an owner and ongoing review process; entry count is not a substitute for maintenance.
 
 ## Research references
 
@@ -293,13 +293,13 @@ The following are not settled by the supplied architecture decisions and should 
 
 | Decision | Suggested timing | Notes |
 | --- | --- | --- |
-| Final project brand and npm package name | Before implementation | All five investigated names have material conflicts. Decide whether to choose Endpointly with a distinct package spelling/domain, investigate another name, or commission a broader brand search. Trademark/legal clearance is separate from registry availability. |
-| Domain and GitHub organization/repository names | Before public project setup | Select TLDs and confirm availability with registrars; RDAP is only a point-in-time check. Confirm GitHub namespace after brand selection. |
+| npm name registration | Immediately before any npm release | `api-hub-toolkit` passed exact-name, punctuation-variant, and search screening on 22 November 2026, but npm may still apply registration checks that are not exposed by search. Keep the package private until all release blockers are cleared. |
+| Domain name | Before creating a project website | Select a domain and verify it with a registrar; a point-in-time RDAP response is not a registration guarantee. |
 | Final MIT license review | Before first public release | MIT is the working choice, subject to the requested final review. Also define how code license and catalog-data/source terms are handled separately. |
 | Independent catalog delivery mechanism | Before designing the data update interface | The plan requires future independent catalog updates. Choose a separately versioned npm data package or a static versioned JSON artifact, then define compatibility, pinning, cache, rollback, and explicit refresh behavior. The v1 bundled snapshot and offline searches are already decided. |
 | Catalog maintenance ownership and review cadence | Before claiming catalog freshness | Name maintainers/review responsibility and agree on a review interval or expiry policy for volatile fields. The architecture requires dated verification, but cadence is not specified. |
 | Approved source/license policy and attribution format | Before bulk catalog assembly | Agree how to handle API docs/specs and third-party directories where terms differ; review each source before redistributing its data. |
-| Final category taxonomy and qualifying-count rules | Before catalog curation | The 19 categories and 300-entry quality bar are proposals from the prior plan. Confirm or adjust the category list and what “active” means for inclusion. |
+| Future catalog growth criteria | Before expanding the catalog | The first release retains five records; decide future inclusion and quality criteria as contributions are proposed. |
 | Future catalog distribution and repository split | Before independent catalog updates | Current implementation is one package containing core logic and a bundled snapshot. Decide whether future data ships as a separate npm package or a versioned static artifact; split repository/packages only if release workflows justify it. No publication is authorized without explicit permission. |
 
-The language, CommonJS baseline, Node.js 22+ support, Vitest, structured JSON, offline-first behavior, bundled v1 snapshot, six-function public library API, 300+ quality-first target, CLI Phase 2 timing, and future website/playground direction are treated as confirmed and do not need to be reopened unless the owner chooses to change them.
+The language, CommonJS baseline, Node.js 22+ support, Vitest, structured JSON, offline-first behavior, bundled v1 snapshot, six-function public library API, five-record initial `0.1.0` scope, CLI Phase 2 timing, and future website/playground direction are treated as confirmed and do not need to be reopened unless the owner chooses to change them.

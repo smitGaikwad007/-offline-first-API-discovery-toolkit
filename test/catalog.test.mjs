@@ -6,7 +6,7 @@ import catalog from "../data/catalog.json";
 import validationModule from "../src/validation.js";
 
 const require = createRequire(import.meta.url);
-const apiCatalog = require("api-directory-toolkit-local");
+const apiCatalog = require("api-hub-toolkit");
 const { createClient } = apiCatalog;
 const { validateCatalog } = validationModule;
 

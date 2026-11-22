@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const apiCatalog = require("api-directory-toolkit-local");
+const apiCatalog = require("api-hub-toolkit");
 
 describe("API details and comparison", () => {
   it("returns full API details without exposing mutable catalog state", () => {

@@ -1,6 +1,6 @@
 # APIHub
 
-APIHub is an offline-first CommonJS library for finding public APIs from a small, evidence-backed JSON catalog. The proposed npm package name is `api-hub-toolkit`; its availability has not yet been verified. The current local package identifier remains temporary, and the package is private and unpublished.
+APIHub is an offline-first CommonJS library for finding public APIs from a small, evidence-backed JSON catalog. Its npm package name is `api-hub-toolkit`. The package remains private and unpublished while catalog redistribution rights are unresolved.
 
 ## Requirements
 
@@ -9,13 +9,13 @@ APIHub is an offline-first CommonJS library for finding public APIs from a small
 
 ## Installation
 
-The package remains private. Once `api-hub-toolkit` is confirmed available, approved as the final npm name, and published, install it with:
+After APIHub is approved for publication and released, install it with:
 
 ```sh
 npm install api-hub-toolkit
 ```
 
-This command is conditional and will not work from the public npm registry unless that name is confirmed, assigned to this project, and published. Until then, the local usage example below uses the current private package identifier.
+The package is currently private, so this command will not work from the public npm registry yet.
 
 ## Local setup
 
@@ -30,7 +30,7 @@ The current catalog is bundled in `data/catalog.json`, so ordinary searches do n
 ## Usage
 
 ```js
-const apis = require("api-directory-toolkit-local");
+const apis = require("api-hub-toolkit");
 
 const results = apis.search("weather forecast", {
   filters: { https: true },

@@ -1,8 +1,8 @@
-# Project Instructions (Name Pending)
+# APIHub Project Instructions
 
 ## Project
 
-This is an open-source API discovery project for developers. Its final brand and npm package name are pending; use the temporary private local package name until the owner selects a brand. Planned capabilities include an npm package, a structured catalog of public APIs, search and filtering, API comparison, a command-line interface, and eventually a website and API playground.
+APIHub is an open-source API discovery project for developers. Its npm package name is `api-hub-toolkit`; the package remains private until release blockers are resolved. Planned capabilities include an npm package, a structured catalog of public APIs, search and filtering, API comparison, a command-line interface, and eventually a website and API playground.
 
 ## Technology
 
