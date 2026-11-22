@@ -82,7 +82,9 @@ Invalid option types, unknown option/filter names, invalid sort/filter values, a
 
 ## Catalog data policy
 
-Records are manually curated from official documentation. Third-party directories may be used to discover candidates but are not treated as authoritative sources. Descriptions are paraphrased; API information is not invented. Every record includes a direct source URL and access date. Facts that have not been established are represented as `null`, `"unknown"`, or `fieldEvidence.status: "unknown"` rather than guessed.
+Records are manually curated from official documentation. Third-party directories may be used to discover candidates but are not treated as authoritative sources. APIHub writes its own descriptions and notes as concise factual summaries; it does not copy provider documentation passages. Every record retains direct source URLs and dates for the fields that were checked. Facts that have not been established are represented as `null`, `"unknown"`, or `fieldEvidence.status: "unknown"` rather than guessed.
+
+The bundled catalog contains API metadata, source links, evidence notes, and references to provider examples or specifications. It does not include provider datasets, API response bodies, images, copied documentation excerpts, code examples, or the referenced OpenAPI documents themselves.
 
 Evidence states:
 
@@ -94,6 +96,10 @@ Evidence states:
 HTTPS and CORS are not interchangeable: CORS remains unknown until checked for a stated browser origin. Rate limits and pricing may change; consult the cited provider documentation before relying on them. `lastVerifiedAt` is a record review date, while `fieldEvidence.verifiedAt` records when each claim was checked.
 
 `dataSource.licenseStatus` tracks whether reuse terms have been reviewed. `not_assessed` is an explicit hold, not permission to redistribute source material. Before any public release, review each source's applicable terms, preserve required attribution, and exclude copied material that cannot be redistributed. The catalog currently contains a small local research sample and makes no blanket claim that third-party source material is relicensed under MIT. Code licensing and catalog/data-source terms are separate.
+
+Open-Meteo's published attribution guidance for its API data is retained in that record's `dataSource.attribution`: if Open-Meteo weather data are included, credit “Weather data by Open-Meteo.com,” link to Open-Meteo, and state whether changes were made. The current catalog record contains metadata only, not Open-Meteo weather data. Its `licenseStatus` remains `not_assessed`.
+
+**NASA non-affiliation:** APIHub is an independent project. NASA does not sponsor, endorse, or affiliate with APIHub; the NASA name in the catalog identifies the provider only. No NASA logo, insignia, imagery, or API response data is bundled.
 
 ### Initial catalog source review
 
@@ -119,4 +125,4 @@ The current implementation is the npm library foundation only. The CLI is a late
 
 ## License
 
-The project code is intended to use MIT, subject to final owner review. See [LICENSE](LICENSE). Catalog facts, source documentation, API specifications, and provider data may carry separate terms and attribution requirements.
+The MIT license in [LICENSE](LICENSE) applies to APIHub's own software. It does not grant rights to third-party APIs, provider documentation, datasets, specifications, or marks. The catalog contains APIHub-authored summaries and factual metadata with source links; each record's `dataSource.licenseStatus` separately tracks its source reuse review and remains `not_assessed` unless explicitly reviewed. API providers' service terms govern users' access to those services and are separate from the license for this software.

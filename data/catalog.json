@@ -85,18 +85,18 @@
       "id": "open-meteo",
       "name": "Open-Meteo Weather API",
       "provider": "Open-Meteo",
-      "description": "Weather forecast and historical weather data through a JSON HTTP API.",
+      "description": "An HTTP service for requesting weather forecasts and historical conditions in JSON.",
       "category": "weather-environment",
       "websiteUrl": "https://open-meteo.com/",
       "documentationUrl": "https://open-meteo.com/en/docs",
       "authentication": {
         "required": false,
         "methods": [],
-        "notes": "Official docs state no API key is required for non-commercial use."
+        "notes": "The no-key option applies to qualifying non-commercial use of the free tier."
       },
       "pricing": {
         "model": "freemium",
-        "notes": "Free for non-commercial use within stated limits; commercial use and higher volumes have paid plans."
+        "notes": "The free tier is limited to non-commercial use; paid plans cover commercial use or larger quotas."
       },
       "https": true,
       "cors": null,
@@ -109,7 +109,7 @@
             "scope": "free non-commercial API"
           }
         ],
-        "notes": "Official pricing page states the free API is limited to 10,000 calls per day."
+        "notes": "The stated daily allowance applies to the non-commercial free tier and may change."
       },
       "tags": [
         "weather",
@@ -128,7 +128,7 @@
         "accessedAt": "2026-11-22",
         "licenseStatus": "not_assessed",
         "licenseName": null,
-        "attribution": null
+        "attribution": "If Open-Meteo API data are included, credit them as “Weather data by Open-Meteo.com,” link to https://open-meteo.com/, and state whether changes were made. This record contains API metadata, not weather data."
       },
       "lastVerifiedAt": "2026-11-22",
       "fieldEvidence": {
@@ -142,37 +142,37 @@
           "status": "verified",
           "sourceUrl": "https://open-meteo.com/",
           "verifiedAt": "2026-11-22",
-          "notes": "No API key required for the documented free non-commercial use."
+          "notes": "The provider documents keyless access for qualifying non-commercial use."
         },
         "pricing": {
           "status": "verified",
           "sourceUrl": "https://open-meteo.com/en/pricing",
           "verifiedAt": "2026-11-22",
-          "notes": "Plan and usage limits can change; consult source for current terms."
+          "notes": "Prices and quotas can change; consult the provider’s current terms."
         },
         "https": {
           "status": "verified",
           "sourceUrl": "https://open-meteo.com/en/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Official request examples use the HTTPS API host."
+          "notes": "The provider’s request examples use an HTTPS endpoint."
         },
         "cors": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No origin-specific CORS verification included in this snapshot."
+          "notes": "This snapshot contains no browser-origin test for CORS."
         },
         "rateLimits": {
           "status": "verified",
           "sourceUrl": "https://open-meteo.com/en/pricing",
           "verifiedAt": "2026-11-22",
-          "notes": "Free non-commercial API quota."
+          "notes": "The recorded quota is for the non-commercial free tier."
         },
         "supportedLanguages": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No language support claim included."
+          "notes": "No supported-language claim has been established."
         },
         "name": {
           "status": "verified",
@@ -190,7 +190,7 @@
           "status": "verified",
           "sourceUrl": "https://open-meteo.com/en/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Project category assigned from the API capabilities described by the provider."
+          "notes": "APIHub assigned this category based on the service’s documented purpose."
         },
         "websiteUrl": {
           "status": "verified",
@@ -214,13 +214,13 @@
           "status": "verified",
           "sourceUrl": "https://open-meteo.com/en/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Discovery tags curated from the provider description and documentation."
+          "notes": "APIHub selected these discovery terms from the service topics."
         },
         "status": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No live service availability probe was performed; documentation presence alone does not establish status."
+          "notes": "No availability test was recorded, so the documentation alone does not establish service status."
         }
       },
       "examples": [],
@@ -232,7 +232,7 @@
       "id": "nasa-open-apis",
       "name": "NASA Open APIs",
       "provider": "NASA",
-      "description": "A collection of NASA web APIs that expose science, imagery, and other space-related data.",
+      "description": "A directory entry for NASA web APIs covering science, imagery, and other space-related information.",
       "category": "health-science",
       "websiteUrl": "https://api.nasa.gov/",
       "documentationUrl": "https://api.nasa.gov/",
@@ -241,7 +241,7 @@
         "methods": [
           "apiKey"
         ],
-        "notes": "The API key parameter accepts DEMO_KEY for exploration; a registered key provides higher default limits."
+        "notes": "A DEMO_KEY can be used to explore the services; registered keys have a higher general quota."
       },
       "pricing": {
         "model": "unknown",
@@ -270,7 +270,7 @@
             "scope": "DEMO_KEY per IP address"
           }
         ],
-        "notes": "NASA states service-specific defaults may vary; these are documented general key and DEMO_KEY limits."
+        "notes": "NASA publishes general quotas, but individual services may set different limits."
       },
       "tags": [
         "space",
@@ -289,7 +289,7 @@
         "accessedAt": "2026-11-22",
         "licenseStatus": "not_assessed",
         "licenseName": null,
-        "attribution": null
+        "attribution": "APIHub is an independent directory. NASA does not sponsor, endorse, or affiliate with APIHub; the NASA name is used only to identify the provider."
       },
       "lastVerifiedAt": "2026-11-22",
       "fieldEvidence": {
@@ -303,31 +303,31 @@
           "status": "verified",
           "sourceUrl": "https://api.nasa.gov/",
           "verifiedAt": "2026-11-22",
-          "notes": "Examples pass api_key=DEMO_KEY; keys are available for expanded use."
+          "notes": "NASA examples use DEMO_KEY; registering provides a key for expanded access."
         },
         "rateLimits": {
           "status": "verified",
           "sourceUrl": "https://api.nasa.gov/assets/html/authentication.html",
           "verifiedAt": "2026-11-22",
-          "notes": "Per-service limits may differ from these defaults."
+          "notes": "The portal lists general quotas and notes that individual services can differ."
         },
         "pricing": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No pricing claim included."
+          "notes": "This record makes no pricing claim."
         },
         "https": {
           "status": "verified",
           "sourceUrl": "https://api.nasa.gov/",
           "verifiedAt": "2026-11-22",
-          "notes": "Official API examples use HTTPS endpoints."
+          "notes": "Provider examples address API endpoints with HTTPS URLs."
         },
         "cors": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No origin-specific CORS verification included in this snapshot."
+          "notes": "No cross-origin check for a specified browser origin is recorded."
         },
         "name": {
           "status": "verified",
@@ -345,7 +345,7 @@
           "status": "verified",
           "sourceUrl": "https://api.nasa.gov/",
           "verifiedAt": "2026-11-22",
-          "notes": "Project category assigned from the API capabilities described by the provider."
+          "notes": "APIHub assigned this category based on the subjects covered by the APIs."
         },
         "websiteUrl": {
           "status": "verified",
@@ -369,19 +369,19 @@
           "status": "verified",
           "sourceUrl": "https://api.nasa.gov/",
           "verifiedAt": "2026-11-22",
-          "notes": "Discovery tags curated from the provider description and documentation."
+          "notes": "APIHub chose these discovery terms to describe the API collection."
         },
         "status": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No live service availability probe was performed; documentation presence alone does not establish status."
+          "notes": "No live availability check was made for this snapshot."
         },
         "supportedLanguages": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No supported language claim included."
+          "notes": "No supported-language claim has been established."
         }
       },
       "examples": [],
@@ -393,14 +393,14 @@
       "id": "open-library",
       "name": "Open Library APIs",
       "provider": "Internet Archive Open Library",
-      "description": "JSON, YAML, and RDF/XML APIs for book discovery and catalog lookup.",
+      "description": "An API collection for finding and retrieving book-catalog information in JSON, YAML, or RDF/XML.",
       "category": "books-education",
       "websiteUrl": "https://openlibrary.org/",
       "documentationUrl": "https://openlibrary.org/developers/api",
       "authentication": {
         "required": "unknown",
         "methods": [],
-        "notes": "The API collection includes public and authenticated endpoints; requirements vary by endpoint."
+        "notes": "Access requirements differ across endpoints, so this record does not assign one setting to the whole collection."
       },
       "pricing": {
         "model": "unknown",
@@ -423,7 +423,7 @@
             "scope": "identified requests with User-Agent and contact"
           }
         ],
-        "notes": "Open Library asks applications to identify requests and cache responses; limits may be enforced more aggressively for violations."
+        "notes": "Open Library publishes separate request rates for identified and unidentified clients and asks clients to cache responses."
       },
       "tags": [
         "books",
@@ -459,31 +459,31 @@
           "status": "unknown",
           "sourceUrl": "https://openlibrary.org/developers/api",
           "verifiedAt": "2026-11-22",
-          "notes": "Endpoint authentication requirements vary; no catalog-wide yes/no claim made."
+          "notes": "Since individual endpoints have different access rules, a single collection-wide value is unknown."
         },
         "rateLimits": {
           "status": "verified",
           "sourceUrl": "https://openlibrary.org/developers/api",
           "verifiedAt": "2026-11-22",
-          "notes": "Documented default and identified request rates."
+          "notes": "The recorded request rates come from the provider’s usage guidance."
         },
         "pricing": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No pricing claim included."
+          "notes": "This record makes no pricing claim."
         },
         "https": {
           "status": "verified",
           "sourceUrl": "https://openlibrary.org/developers/api",
           "verifiedAt": "2026-11-22",
-          "notes": "Official API documentation is served over HTTPS."
+          "notes": "The cited developer pages use HTTPS."
         },
         "cors": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No origin-specific CORS verification included in this snapshot."
+          "notes": "This snapshot has no test for a named browser origin."
         },
         "name": {
           "status": "verified",
@@ -501,7 +501,7 @@
           "status": "verified",
           "sourceUrl": "https://openlibrary.org/developers/api",
           "verifiedAt": "2026-11-22",
-          "notes": "Project category assigned from the API capabilities described by the provider."
+          "notes": "APIHub placed this collection in Books & Education based on its book-catalog focus."
         },
         "websiteUrl": {
           "status": "verified",
@@ -525,19 +525,19 @@
           "status": "verified",
           "sourceUrl": "https://openlibrary.org/developers/api",
           "verifiedAt": "2026-11-22",
-          "notes": "Discovery tags curated from the provider description and documentation."
+          "notes": "APIHub selected these terms to describe the collection’s subject area."
         },
         "status": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No live service availability probe was performed; documentation presence alone does not establish status."
+          "notes": "This review did not include a live availability check."
         },
         "supportedLanguages": {
           "status": "verified",
           "sourceUrl": "https://openlibrary.org/developers/api",
           "verifiedAt": "2026-11-22",
-          "notes": "The official docs link JavaScript and Python example requests."
+          "notes": "The developer guide links request examples in JavaScript and Python."
         }
       },
       "examples": [
@@ -569,7 +569,7 @@
       "id": "github-rest-api",
       "name": "GitHub REST API",
       "provider": "GitHub",
-      "description": "REST endpoints for reading and managing GitHub resources and automating repository workflows.",
+      "description": "A REST interface for accessing and changing GitHub resources, including repository automation.",
       "category": "developer-tools",
       "websiteUrl": "https://github.com/",
       "documentationUrl": "https://docs.github.com/en/rest",
@@ -578,7 +578,7 @@
         "methods": [
           "httpBearer"
         ],
-        "notes": "Public data can be read without authentication, while many endpoints require a token or expose additional data when authenticated."
+        "notes": "Some public reads need no credential; other operations require authentication or return more data when signed in."
       },
       "pricing": {
         "model": "unknown",
@@ -601,7 +601,7 @@
             "scope": "authenticated user primary REST limit"
           }
         ],
-        "notes": "Some endpoints have more restrictive limits; secondary limits also apply."
+        "notes": "These figures cover primary quotas; individual endpoints and secondary controls can impose tighter limits."
       },
       "tags": [
         "developer-tools",
@@ -636,43 +636,43 @@
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
           "verifiedAt": "2026-11-22",
-          "notes": "Authentication requirements vary by endpoint."
+          "notes": "Credential requirements depend on the endpoint and requested resource."
         },
         "authentication.methods": {
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
           "verifiedAt": "2026-11-22",
-          "notes": "Bearer token is an accepted authentication header form."
+          "notes": "Bearer tokens are one documented way to provide credentials."
         },
         "rateLimits": {
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
           "verifiedAt": "2026-11-22",
-          "notes": "Primary rates; endpoint-specific and secondary limits also apply."
+          "notes": "The values represent primary request quotas; endpoint-specific and secondary limits also apply."
         },
         "pricing": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No pricing claim included."
+          "notes": "This record makes no pricing claim."
         },
         "https": {
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest",
           "verifiedAt": "2026-11-22",
-          "notes": "Official API base URL is HTTPS."
+          "notes": "The documented API base address uses HTTPS."
         },
         "cors": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No origin-specific CORS verification included in this snapshot."
+          "notes": "No CORS test against a specified browser origin is recorded."
         },
         "supportedLanguages": {
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api",
           "verifiedAt": "2026-11-22",
-          "notes": "Official JavaScript scripting guide is linked from REST API docs."
+          "notes": "GitHub links JavaScript guidance for making REST requests."
         },
         "name": {
           "status": "verified",
@@ -690,7 +690,7 @@
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest",
           "verifiedAt": "2026-11-22",
-          "notes": "Project category assigned from the API capabilities described by the provider."
+          "notes": "APIHub assigned this category based on the API’s developer-tool use."
         },
         "websiteUrl": {
           "status": "verified",
@@ -714,13 +714,13 @@
           "status": "verified",
           "sourceUrl": "https://docs.github.com/en/rest",
           "verifiedAt": "2026-11-22",
-          "notes": "Discovery tags curated from the provider description and documentation."
+          "notes": "APIHub chose these terms to describe common uses of the API."
         },
         "status": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No live service availability probe was performed; documentation presence alone does not establish status."
+          "notes": "No live availability check was part of this review."
         }
       },
       "examples": [
@@ -739,18 +739,18 @@
       "id": "dummyjson",
       "name": "DummyJSON",
       "provider": "DummyJSON",
-      "description": "A mock REST API that provides sample resources for front-end testing and prototyping.",
+      "description": "A public mock service with sample endpoints for frontend development and testing.",
       "category": "developer-tools",
       "websiteUrl": "https://dummyjson.com/",
       "documentationUrl": "https://dummyjson.com/docs",
       "authentication": {
         "required": false,
         "methods": [],
-        "notes": "Public sample endpoints are demonstrated without credentials; authenticated variants are also available."
+        "notes": "The documented sample product routes are public; other routes also support authenticated use."
       },
       "pricing": {
         "model": "free",
-        "notes": "The official documentation describes the service as free."
+        "notes": "The provider describes the hosted mock service as free."
       },
       "https": true,
       "cors": null,
@@ -788,31 +788,31 @@
           "status": "verified",
           "sourceUrl": "https://dummyjson.com/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Core product endpoints are public; auth routes/variants also exist."
+          "notes": "The product examples are shown without credentials; authenticated routes are also documented."
         },
         "pricing": {
           "status": "verified",
           "sourceUrl": "https://dummyjson.com/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Official docs describe the service as free."
+          "notes": "The provider describes this service as free in its documentation."
         },
         "https": {
           "status": "verified",
           "sourceUrl": "https://dummyjson.com/docs/products",
           "verifiedAt": "2026-11-22",
-          "notes": "Official request examples use HTTPS."
+          "notes": "The documented requests use an HTTPS host."
         },
         "cors": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No origin-specific CORS verification included in this snapshot."
+          "notes": "No browser-origin-specific test is stored in this catalog."
         },
         "rateLimits": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No verified rate limit included."
+          "notes": "No source-backed quota is recorded for this service."
         },
         "name": {
           "status": "verified",
@@ -830,7 +830,7 @@
           "status": "verified",
           "sourceUrl": "https://dummyjson.com/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Project category assigned from the API capabilities described by the provider."
+          "notes": "APIHub assigned this category based on the service’s development and testing use."
         },
         "websiteUrl": {
           "status": "verified",
@@ -854,19 +854,19 @@
           "status": "verified",
           "sourceUrl": "https://dummyjson.com/docs",
           "verifiedAt": "2026-11-22",
-          "notes": "Discovery tags curated from the provider description and documentation."
+          "notes": "APIHub selected these terms to describe the sample-data use case."
         },
         "status": {
           "status": "unknown",
           "sourceUrl": null,
           "verifiedAt": null,
-          "notes": "No live service availability probe was performed; documentation presence alone does not establish status."
+          "notes": "No live availability check was performed for this snapshot."
         },
         "supportedLanguages": {
           "status": "verified",
           "sourceUrl": "https://dummyjson.com/docs/products",
           "verifiedAt": "2026-11-22",
-          "notes": "The official endpoint documentation includes JavaScript fetch examples."
+          "notes": "The endpoint guide includes a JavaScript fetch example."
         }
       },
       "examples": [
