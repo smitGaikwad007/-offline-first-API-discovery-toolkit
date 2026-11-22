@@ -1,0 +1,33 @@
+{
+  "name": "api-directory-toolkit-local",
+  "version": "0.1.0",
+  "description": "Offline-first API discovery toolkit with a searchable, evidence-tracked catalog",
+  "author": "Smit Gaikwad <79749328+smitGaikwad007@users.noreply.github.com>",
+  "private": true,
+  "license": "MIT",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "files": [
+    "src",
+    "data/catalog.json",
+    "data/schema/catalog.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:catalog": "node scripts/validate-catalog.js"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
