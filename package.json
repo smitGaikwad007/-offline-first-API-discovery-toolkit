@@ -5,6 +5,10 @@
   "author": "Smit Gaikwad <79749328+smitGaikwad007@users.noreply.github.com>",
   "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smitGaikwad007/APIHub.git"
+  },
   "main": "src/index.js",
   "exports": "./src/index.js",
   "files": [
